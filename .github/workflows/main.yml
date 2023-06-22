@@ -11,15 +11,16 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Chectout code
       - uses: actions/checkout@v2
 
       - name: Run lint
-      - run: ./gradlew lintDebug
+      - run: ./gradlew lint
 
       - name : Upload html test report
-      -  uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
 
         with:
           name: index.html
